@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lopez Bakery - Pre-Order System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">📦</span>
+                <span class="logo-text">Lopez Bakery</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-btn active" data-target="menu-page">Pre-Order Menu</a></li>
+                <li><a href="#" class="nav-btn" data-target="admin-page">Admin Portal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="content-container">
+
+        <!-- PAGE 1: PRE-ORDER MENU & RESERVATION FORM -->
+        <section id="menu-page" class="page-view active">
+            <!-- Sample Menu Item Display Card -->
+            <div class="menu-grid">
+                <!-- Bread 1 -->
+                <div class="menu-item-card" data-item-name="Premium Pastries">
+                    <div class="card-header">
+                        <h3>Premium Pastries</h3>
+                        <span class="price">₱15.00</span>
+                    </div>
+                    <p class="card-desc">Freshly baked traditional bread with a distinct line down the middle.</p>
+                    <div class="qty-selector">
+                        <label for="item-qty-1">Qty</label>
+                        <input type="number" id="item-qty-1" class="item-qty" value="0" min="0">
+                    </div>
+                </div>
+
+                <!-- Bread 2 -->
+                <div class="menu-item-card" data-item-name="Spanish Bread">
+                    <div class="card-header">
+                        <h3>Spanish Bread</h3>
+                        <span class="price">₱12.00</span>
+                    </div>
+                    <p class="card-desc">Soft, rolled sweet bread filled with a delicious buttery sugar crumb paste.</p>
+                    <div class="qty-selector">
+                        <label for="item-qty-2">Qty</label>
+                        <input type="number" id="item-qty-2" class="item-qty" value="0" min="0">
+                    </div>
+                </div>
+
+                <!-- Bread 3 -->
+                <div class="menu-item-card" data-item-name="Ube Cheese Disc">
+                    <div class="card-header">
+                        <h3>Ube Cheese Disc</h3>
+                        <span class="price">₱20.00</span>
+                    </div>
+                    <p class="card-desc">Rich purple yam infused dough stuffed with a savory melted cheese core.</p>
+                    <div class="qty-selector">
+                        <label for="item-qty-3">Qty</label>
+                        <input type="number" id="item-qty-3" class="item-qty" value="0" min="0">
+                    </div>
+                </div>
+
+                <!-- Bread 4 -->
+                <div class="menu-item-card" data-item-name="Ensaymada Classic">
+                    <div class="card-header">
+                        <h3>Ensaymada Classic</h3>
+                        <span class="price">₱25.00</span>
+                    </div>
+                    <p class="card-desc">Sweet, soft brioche coil brushed with butter, sugar, and finely grated cheese.</p>
+                    <div class="qty-selector">
+                        <label for="item-qty-4">Qty</label>
+                        <input type="number" id="item-qty-4" class="item-qty" value="0" min="0">
+                    </div>
+                </div>
+
+                <!-- Bread 5 -->
+                <div class="menu-item-card" data-item-name="Special Hopia Baboy">
+                    <div class="card-header">
+                        <h3>Special Hopia Baboy</h3>
+                        <span class="price">₱10.00</span>
+                    </div>
+                    <p class="card-desc">Flaky pastry crust loaded with a savory, sweet winter melon filling paste.</p>
+                    <div class="qty-selector">
+                        <label for="item-qty-5">Qty</label>
+                        <input type="number" id="item-qty-5" class="item-qty" value="0" min="0">
+                    </div>
+                </div>
+
+                <!-- Bread 6 -->
+                <div class="menu-item-card" data-item-name="Ube Hopia">
+                    <div class="card-header">
+                        <h3>Ube Hopia</h3>
+                        <span class="price">₱10.00</span>
+                    </div>
+                    <p class="card-desc">Flaky rolled layered pastry dough cubes packed with sweet purple yam fudge filling.</p>
+                    <div class="qty-selector">
+                        <label for="item-qty-6">Qty</label>
+                        <input type="number" id="item-qty-6" class="item-qty" value="0" min="0">
+                    </div>
+                </div>
+
+                <!-- Bread 7 -->
+                <div class="menu-item-card" data-item-name="Pan de Regla">
+                    <div class="card-header">
+                        <h3>Pan de Regla</h3>
+                        <span class="price">₱12.00</span>
+                    </div>
+                    <p class="card-desc">Classic crimson bread log stuffed with a sweet, pudding-like red cake crumb core.</p>
+                    <div class="qty-selector">
+                        <label for="item-qty-7">Qty</label>
+                        <input type="number" id="item-qty-7" class="item-qty" value="0" min="0">
+                    </div>
+                </div>
+
+                <!-- Bread 8 -->
+                <div class="menu-item-card" data-item-name="Monay Star">
+                    <div class="card-header">
+                        <h3>Monay Star</h3>
+                        <span class="price">₱15.00</span>
+                    </div>
+                    <p class="card-desc">Dense, heavy, milk-infused round dinner roll bun split down the middle spine.</p>
+                    <div class="qty-selector">
+                        <label for="item-qty-8">Qty</label>
+                        <input type="number" id="item-qty-8" class="item-qty" value="0" min="0">
+                    </div>
+                </div>
+
+                <!-- Bread 9 -->
+                <div class="menu-item-card" data-item-name="Kababayan Bread">
+                    <div class="card-header">
+                        <h3>Kababayan Bread</h3>
+                        <span class="price">₱8.00</span>
+                    </div>
+                    <p class="card-desc">Sweet, moist Filipino native mini muffin characterized by its distinct gong shape.</p>
+                    <div class="qty-selector">
+                        <label for="item-qty-9">Qty</label>
+                        <input type="number" id="item-qty-9" class="item-qty" value="0" min="0">
+                    </div>
+                </div>
+
+                <!-- Bread 10 -->
+                <div class="menu-item-card" data-item-name="Pan de Coco">
+                    <div class="card-header">
+                        <h3>Pan de Coco</h3>
+                        <span class="price">₱12.00</span>
+                    </div>
+                    <p class="card-desc">Golden sweet roll filled with a rich, sticky sweetened grated coconut filling.</p>
+                    <div class="qty-selector">
+                        <label for="item-qty-10">Qty</label>
+                        <input type="number" id="item-qty-10" class="item-qty" value="0" min="0">
+                    </div>
+                </div>
+
+                <!-- Bread 11 -->
+                <div class="menu-item-card" data-item-name="Cheese Roll Twist">
+                    <div class="card-header">
+                        <h3>Cheese Roll Twist</h3>
+                        <span class="price">₱18.00</span>
+                    </div>
+                    <p class="card-desc">Soft twisted yeast dough log wrapping a thick, continuous block of cheese cheddar.</p>
+                    <div class="qty-selector">
+                        <label for="item-qty-11">Qty</label>
+                        <input type="number" id="item-qty-11" class="item-qty" value="0" min="0">
+                    </div>
+                </div>
+
+                <!-- Bread 12 -->
+                <div class="menu-item-card" data-item-name="Buko Pie Slice">
+                    <div class="card-header">
+                        <h3>Buko Pie Slice</h3>
+                        <span class="price">₱35.00</span>
+                    </div>
+                    <p class="card-desc">Rich custard pie slice packed with layers of tender young coconut meat ribbons.</p>
+                    <div class="qty-selector">
+                        <label for="item-qty-12">Qty</label>
+                        <input type="number" id="item-qty-12" class="item-qty" value="0" min="0">
+                    </div>
+                </div>
+
+                <!-- Bread 13 -->
+                <div class="menu-item-card" data-item-name="Cheesy Puto">
+                    <div class="card-header">
+                        <h3>Cheesy Puto</h3>
+                        <span class="price">₱5.00</span>
+                    </div>
+                    <p class="card-desc">Steamed rice cake muffins topped with a generous slice of melted cheese.</p>
+                    <div class="qty-selector">
+                        <label for="item-qty-13">Qty</label>
+                        <input type="number" id="item-qty-13" class="item-qty" value="0" min="0">
+                    </div>
+                </div>
+
+                <!-- Bread 14 -->
+                <div class="menu-item-card" data-item-name="Pinagong">
+                    <div class="card-header">
+                        <h3>Pinagong</h3>
+                        <span class="price">₱15.00</span>
+                    </div>
+                    <p class="card-desc">Freshly baked traditional bread with a distinct line down the middle.</p>
+                    <div class="qty-selector">
+                        <label for="item-qty">Qty</label>
+                        <input type="number" id="item-qty" value="4" min="1">
+                    </div>
+                </div>
+            </div>
+                        
+                       <!-- Secure Reservation Form -->
+            <div class="form-wrapper">
+                <h2>Secure Reservation Form</h2>
+                <form id="preorder-form">
+                    <div class="form-group">
+                        <label for="customer-name">Full Name</label>
+                        <input type="text" id="customer-name" placeholder="e.g. Alpha Joy" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customer-phone">Phone Number</label>
+                        <input type="tel" id="customer-phone" placeholder="e.g. 09567324992" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pickup-time">Target Pickup Time (Store Hours: 06:00 AM - 06:00 PM)</label>
+                        <input type="time" id="pickup-time" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Pre-Order</button>
+                </form>
+            </div>
+        </section>
+
+
+        <!-- PAGE 2: OWNER ADMINISTRATION PANEL -->
+        <section id="admin-page" class="page-view">
+            <h1>Owner Administration Panel</h1>
+            <h2>Active Customer Pre-Orders Queue</h2>
+            
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Pickup Time</th>
+                            <th>Customer Details</th>
+                            <th>Reserved Items</th>
+                            <th>Status</th>
+                            <th>Tracking Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-queue-body">
+                        <!-- Dynamic rows will be inserted here via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

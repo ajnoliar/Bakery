@@ -1,0 +1,291 @@
+:root {
+    --primary-color: #8B4513; 
+    --secondary-color: #A0522D;
+    /* WCAG AAA Safe Green (#1E824C) replaces #2ecc71 for a solid 4.5:1+ contrast on white backgrounds */
+    --success-color: #1E824C; 
+    --bg-color: #f9f9f9;
+    --card-bg: #ffffff;
+    --text-color: #222222; /* Darkened slightly from #333 for sharper legibility */
+    --input-focus-bg: #e8f0fe;
+    --border-color: #bbbbbb; /* Darkened from #ddd to make form outlines distinct */
+    --focus-outline-color: #005A9C; /* High-contrast blue for visible keyboard focus states */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Global Focus Styles for Keyboard Navigation */
+*:focus-visible {
+    outline: 3px solid var(--focus-outline-color) !important;
+    outline-offset: 2px !important;
+}
+
+/* Screen Reader Only Utility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Header & Navigation Bar Styling */
+.navbar {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon { font-size: 24px; }
+.logo-text { color: #ffffff; font-size: 22px; font-weight: bold; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    /* Boosted contrast from 0.85 opacity to 0.95 opacity to meet criteria on dark background */
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px 12px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+/* Page Control Layout views */
+.content-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.page-view {
+    display: none;
+}
+
+.page-view.active {
+    display: block;
+}
+
+.section-title {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 22px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+/* 3-Column Responsive Grid Blueprint Layout for Larger Inventories */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.menu-item-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-item-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-header h3 { color: var(--primary-color); font-size: 17px; }
+.price { color: var(--success-color); font-weight: bold; font-size: 17px; }
+.card-desc { color: #444444; font-size: 14px; margin-bottom: 15px; flex-grow: 1; } /* Darkened from #666 for a 4.5:1 ratio */
+
+.qty-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 12px;
+}
+
+.qty-selector label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.qty-selector input {
+    width: 70px;
+    padding: 6px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+/* Secure Form Layout Box System */
+.form-wrapper {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.form-wrapper h2 {
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: var(--card-bg); /* Use accessible white background as basic layer */
+    color: var(--text-color);
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: var(--secondary-color);
+    background-color: #ffffff;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.submit-btn:hover { background-color: #17633A; }
+
+/* Admin Dashboard Table System Mechanics */
+h1 { color: var(--secondary-color); text-align: center; margin-bottom: 10px; font-size: 28px; }
+h2 { color: var(--secondary-color); font-size: 20px; margin-bottom: 20px; }
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-table th {
+    background-color: #fafafa;
+    color: #222222; /* Darkened from #555 to clear threshold benchmarks */
+    font-weight: bold;
+    padding: 15px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.admin-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eeeeee;
+    vertical-align: middle;
+}
+
+.no-orders-msg {
+    text-align: center;
+    color: #444444; /* Darkened from #888 to ensure readable text fallback state */
+    font-style: italic;
+    padding: 40px !important;
+}
+
+/* Badges Layers */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Darkened text values for status tags to guarantee contrast against their light pill backgrounds */
+.status-pending { background-color: #fff9db; color: #8A5A00; }
+.status-ready { background-color: #e3faf2; color: #08664A; }
+
+.action-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.action-btn:hover { background-color: var(--secondary-color); }
